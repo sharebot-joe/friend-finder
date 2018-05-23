@@ -1,5 +1,5 @@
 # Friend Finder
-### A compatibility-based dating app
+## A compatibility-based dating app
 
 Friend Finder is a compatibility-based dating app. Try Friend Finder to meet your true soul mate!
 
