@@ -1,0 +1,18 @@
+.btn {
+  font-size: 1.3rem;
+  padding: .5rem 1rem;
+  margin: 1rem 0;
+}
+.btn .fas {
+  margin-right: .5rem;
+}
+
+.welcome {
+  font-size: 1.2rem;
+}
+.welcome .fab {
+  margin-right: 1.5rem;
+}
+.links a {
+  padding: 0 .5rem;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../public/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row text-center jumbotron">
+      <div class="col-lg-12 mx-3">
+          <div class="welcome">
+            <h1 style="font-size: 4rem"><i class="fab fa-facebook-square"></i>Friend Finder</h1>
+            <hr>
+            <div class="status">
+              <!-- Dynamically created msg showing current available tables -->
+            </div>
+            <p>Answer a few basic questions.</p>
+            <p>Then find the friend with the greatest compatibility!</p>
+          </div>    
+      </div>
+    </div>      
+    <div class="row text-center">
+      <div class="col-lg-12 mx-3 my-3">
+          <button type="button" class="btn btn-primary tables"><i class="fas fa-list-alt"></i>Go to Survey</button>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="links col-lg-12 ">
+        <a href="/api/tables">API Friends List</a>
+        <span> | </span>
+        <a href="/api/waitlist">Github Repo</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- All javascripts go here-->
+  <script type="text/javascript" src="../javascript/server.js">
+    $(".tables").click(function() {
+      event.preventDefault();
+      $.post("/tables", function(data, status){
+          alert("Data: " + data + "\nStatus: " + status);
+      });
+      fs.readFile(__dirname + "/index.html", function(err, data) {
+        if (err) {
+          res.writeHead(500, { "Content-Type": "text/html" });
+          res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
+        }
+        else {
+          // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+          // an html file.
+          res.writeHead(200, { "Content-Type": "text/html" });
+          res.end(data);
+        }
+  });
+
+
+    })
+
+
+  </script>
+</body>
+</html>
