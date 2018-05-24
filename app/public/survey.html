@@ -1,46 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Friend Finder - Survey</title>
-
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../public/style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-</head>
-<body>
-  <div class="container">
-    <div class="row text-center jumbotron">
-      <div class="col-lg-12 mx-3">
-          <div class="welcome">
-            <h1 style="font-size: 4rem"><i class="fab fa-facebook-square"></i>Friend Finder</h1>
-            <hr>
-            <div class="status">
-              <!-- Dynamically created msg showing current available tables -->
-            </div>
-            <p>Answer a few basic questions.</p>
-            <p>Then find the friend with the greatest compatibility!</p>
-          </div>    
+  <head>
+    <meta charset="utf-8">
+      <title>
+        Friend Finder - Survey
+      </title>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="./style.css" rel="stylesheet" type="text/css">
+          <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" rel="stylesheet">
+          </link>
+        </link>
+      </link>
+    </meta>
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="row text-center jumbotron questions">
+        <div class="col-lg-12 mx-3">
+          <h2>
+            Survey Questions
+          </h2>
+          <hr>
+            <table style="width:100%; margin: 3rem auto">
+              <tr>
+                <h3>
+                  <strong>
+                    Your Profile
+                  </strong>
+                </h3>
+              </tr>
+              <tr>
+                <td>
+                  <h4>
+                    Name (Required)
+                  </h4>
+                </td>
+                <td>
+                  <input class="form-control" id="name" required="" type="text">
+                  </input>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>
+                    Link to Photo Image (Required)
+                  </h4>
+                </td>
+                <td>
+                  <input class="form-control" id="photo" required="" type="text">
+                  </input>
+                </td>
+              </tr>
+            </table>
+            <table style="width:100%">
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 1
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q1">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 2
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q2">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 3
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q3">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 4
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q4">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 5
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q5">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 6
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q6">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 7
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q7">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 8
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q8">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 9
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q9">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h3>
+                    <strong>
+                      Question 10
+                    </strong>
+                  </h3>
+                </td>
+                <td>
+                  <h4>
+                    Your mind is always buzzing with unexplored ideas and plans.
+                  </h4>
+                </td>
+                <td>
+                  <select class="chosen-select" id="q10">
+                    <option value="">
+                    </option>
+                    <option value="1">
+                      1 (Strongly Disagree)
+                    </option>
+                    <option value="2">
+                      2
+                    </option>
+                    <option value="3">
+                      3
+                    </option>
+                    <option value="4">
+                      4
+                    </option>
+                    <option value="5">
+                      5 (Strongly Agree)
+                    </option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <br>
+              <br>
+              </br>
+            </br>
+          </hr>
+        </div>
       </div>
-    </div>      k
-    <div class="row text-center">
-      <div class="col-lg-12 mx-3 my-3">
-          <button type="button" class="btn btn-primary tables"><i class="fas fa-list-alt"></i>Go to Survey</button>
+      <div class="row text-center">
+        <div class="col-lg-12 mx-3 my-3">
+          <button class="btn btn-primary answers" type="button">
+            <i class="fas fa-list-alt">
+            </i>
+            /Submit answers
+          </button>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="links col-lg-12 ">
+          <a href="/api/tables">
+            API Friends List
+          </a>
+          <span>
+            |
+          </span>
+          <a href="/api/waitlist">
+            Github Repo
+          </a>
+        </div>
       </div>
     </div>
-    <div class="row text-center">
-      <div class="links col-lg-12 ">
-        <a href="/api/tables">API Friends List</a>
-        <span> | </span>
-        <a href="/api/waitlist">Github Repo</a>
-      </div>
-    </div>
-
-  </div>
-  <!-- All javascripts go here-->
-  <script type="text/javascript" src="../javascript/server.js">
-    $(".tables").click(function() {
+    <!-- All javascripts go here-->
+    <script src="../javascript/server.js" type="text/javascript">
+      $(".tables").click(function() {
       event.preventDefault();
       $.post("/tables", function(data, status){
           alert("Data: " + data + "\nStatus: " + status);
@@ -60,8 +456,6 @@
 
 
     })
-
-
-  </script>
-</body>
+    </script>
+  </body>
 </html>

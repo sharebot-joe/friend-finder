@@ -1,7 +1,7 @@
 {
   "name": "friend-finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "**A compatibility-based dating app**",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",

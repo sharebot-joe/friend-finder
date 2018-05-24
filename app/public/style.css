@@ -1,3 +1,8 @@
+
+
+hr {
+	position: relative;
+}
 .btn {
   font-size: 1.3rem;
   padding: .5rem 1rem;
@@ -15,4 +20,16 @@
 }
 .links a {
   padding: 0 .5rem;
+}
+.questions h3 {
+	font-size: 1.5rem;
+}
+
+.questions h4 {
+	font-size: 1.3rem;
+}
+.questions table tr {
+	margin: 2rem auto;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
