@@ -1,10 +1,21 @@
+html body{
+  background: lightgray;
+}
+.jumbotron {
+  background: aliceblue;
+}
 hr {
 	position: relative;
+}
+.submit {
+  width: 100%;
+  margin: 3rem 0 0 0;
+
 }
 .btn {
   font-size: 1.3rem;
   padding: .5rem 1rem;
-  margin: 1rem 0;
+   text-align: center;
 }
 .btn .fas {
   margin-right: .5rem;
@@ -16,18 +27,44 @@ hr {
 .welcome .fab {
   margin-right: 1.5rem;
 }
+.prompt {
+  display: inline-block;
+  margin-bottom: 3.5rem;
+  padding:0 1.5rem;
+  padding-top: 1rem;
+  border-radius: 4px;
+   border: 1px solid gray;
+   background: royalblue;
+}
+.prompt p {
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: helvetica, arial, sans-serif;
+}
 .links a {
   padding: 0 .5rem;
 }
+
 .questions h3 {
 	font-size: 1.5rem;
 }
-
 .questions h4 {
+  font-weight: bold;
 	font-size: 1.3rem;
 }
-.questions table tr {
-	margin: 2rem auto;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+.profiletable {
+  display: inline-block;
+  
+  padding: 50px;
+  text-align: right;
+}
+.profiletable h4 {
+  margin-right: 1.5rem;
+}
+.questionstable {
+  width: 100%;
+}
+.questionstable h4 {
+  font-weight: normal;
+  font-family: palatino, verdana, serif;
 }
