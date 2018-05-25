@@ -413,7 +413,7 @@
       </div>
       <div class="row text-center">
         <div class="col-lg-12 mx-3 my-3">
-          <button class="btn btn-primary answers" type="button">
+          <button class="btn btn-primary submit" type="button">
             <i class="fas fa-list-alt">
             </i>
             /Submit answers
@@ -435,27 +435,32 @@
       </div>
     </div>
     <!-- All javascripts go here-->
-    <script src="../javascript/server.js" type="text/javascript">
-      $(".tables").click(function() {
-      event.preventDefault();
-      $.post("/tables", function(data, status){
-          alert("Data: " + data + "\nStatus: " + status);
+
+    <!-- Javascript for handling form submission. This function will make a POST call which add the submitted info to friends.js -->
+    <script type="text/javascript">
+      $(".submit").on("click", function() {
+        // var searchedCharacter = $("#character-search").val().trim();
+
+        // // Using a RegEx Pattern to remove spaces from searchedCharacter
+        // // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+        // searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+        // $.get("/api/characters/" + searchedCharacter, function(data) {
+        //   console.log(data);
+        //   if (data) {
+        //     $("#stats").show();
+        //     $("#name").text(data.name);
+        //     $("#role").text(data.role);
+        //     $("#age").text(data.age);
+        //     $("#force-points").text(data.forcePoints);
+        //   }
+        //   else {
+        //     $("#name").text("The force is not strong with this one. Your character was not found.");
+        //     $("#stats").hide();
+        //   }
+        // });
       });
-      fs.readFile(__dirname + "/index.html", function(err, data) {
-        if (err) {
-          res.writeHead(500, { "Content-Type": "text/html" });
-          res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
-        }
-        else {
-          // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
-          // an html file.
-          res.writeHead(200, { "Content-Type": "text/html" });
-          res.end(data);
-        }
-  });
-
-
-    })
     </script>
+
   </body>
 </html>

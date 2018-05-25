@@ -35,46 +35,54 @@ var tables = [];
 //  }
 var waitlist = [];
 
-// Routes
-// =============================================================
+// ================================================================================
+// ROUTER
+// The below points our server to a series of "route" files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+// ================================================================================
 
-// Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
-});
+// require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
-// API tables page which displays tables JSON data
-app.get("/api/tables", function(req, res) {
-  return res.json(tables);
-  // res.sendFile(path.join(__dirname, "view.html"));
-});
 
-// API waitlist page which displays waitlist JSON data
-app.get("/api/waitlist", function(req, res) {
-  return res.json(waitlist);
-  // res.sendFile(path.join(__dirname, "view.html"));
-});
+// // Basic route that sends the user first to the AJAX Page
+// app.get("/", function(req, res) {
+// 	// var newpath = path.join(__dirname, "home.html");
+//   res.sendFile(path.join(__dirname, "./app/public/home.html"));
+// });
 
-// Displays current reservatiosn and waiting list
-app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "tables.html"));
-});
+// // API tables page which displays tables JSON data
+// app.get("/api/tables", function(req, res) {
+//   return res.json(tables);
+//   // res.sendFile(path.join(__dirname, "view.html"));
+// });
 
-// Displays a single character, or returns false
-app.get("/reservations", function(req, res) {
-  res.sendFile(path.join(__dirname, "reservations.html"));
-  // var chosen = req.params.character;
+// // API waitlist page which displays waitlist JSON data
+// app.get("/api/waitlist", function(req, res) {
+//   return res.json(waitlist);
+//   // res.sendFile(path.join(__dirname, "view.html"));
+// });
 
-  // console.log(chosen);
+// // Displays current reservatiosn and waiting list
+// app.get("/tables", function(req, res) {
+//   res.sendFile(path.join(__dirname, "tables.html"));
+// });
 
-  // for (var i = 0; i < characters.length; i++) {
-  //   if (chosen === characters[i].routeName) {
-  //     return res.json(characters[i]);
-  //   }
-  // }
+// // Displays a single character, or returns false
+// app.get("/reservations", function(req, res) {
+//   res.sendFile(path.join(__dirname, "reservations.html"));
+//   // var chosen = req.params.character;
 
-  // return res.json(false);
-});
+//   // console.log(chosen);
+
+//   // for (var i = 0; i < characters.length; i++) {
+//   //   if (chosen === characters[i].routeName) {
+//   //     return res.json(characters[i]);
+//   //   }
+//   // }
+
+//   // return res.json(false);
+// });
 
 // app.post("/api/characters", function(req, res) {
 //   // req.body hosts is equal to the JSON post sent from the user
@@ -91,8 +99,8 @@ app.get("/reservations", function(req, res) {
 // });
 
 // Serve up static files to the client
-app.use('/static', express.static(path.join(__dirname, 'public')));
-
+var fullPath = path.join(__dirname, '/app/public')
+app.use(express.static(fullPath));
 
 function handleRequest(req, res) {
   var path = req.url;
