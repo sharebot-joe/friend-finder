@@ -5,7 +5,7 @@
   <title>Friend Finder</title>
 
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
@@ -26,7 +26,7 @@
     </div>      
     <div class="row text-center">
       <div class="col-lg-12">
-      <button type="button" class="btn btn-primary survey"><i class="fas fa-list-alt"></i>Go to Survey</button>
+      <a href="/survey"><button type="button" class="btn btn-primary survey"><i class="fas fa-list-alt"></i>Go to Survey</button></a>
       </div>
     </div>
     <div class="row text-center">
@@ -39,15 +39,43 @@
 
   </div>
   <!-- All javascripts go here-->
-
+  
   <!-- This javascript handles click on "Go to Survey" button -->
-  <script type="text/javascript" src="../javascript/server.js">
-    $(".survey").click(function() {
-        event.preventDefault();
-        app.get("/survey", function(req, res) {
-          res.sendFile(path.join(__dirname, "../public/survey.html"));
+  <!-- <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newCharacter = {
+        name: $("#name").val().trim(),
+        role: $("#role").val().trim(),
+        age: $("#age").val().trim(),
+        forcePoints: $("#force-points").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/characters", newCharacter)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding character...");
         });
-    })
+    });
   </script>
+
+  <script type="text/javascript">
+    $(".survey").on("click", function() {
+        event.preventDefault();
+
+        some data 
+
+        $.post("/api/characters", newCharacter)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding character...");
+        });
+        // app.get("/survey", function(req, res) {
+        //   res.sendFile(path.join(__dirname, "../public/survey.html"));
+        // });
+    })
+  </script> -->
 </body>
 </html>

@@ -3,6 +3,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var catchall = express.Router();
 
 // Sets up the Express App
 // =============================================================
@@ -42,7 +43,9 @@ var waitlist = [];
 // ================================================================================
 
 // require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+
+var apiRoutes = require("./app/routing/apiRoutes")(app);
+var htmlRoutes = require("./app/routing/htmlRoutes")(app);
 
 
 // // Basic route that sends the user first to the AJAX Page
@@ -102,48 +105,48 @@ require("./app/routing/htmlRoutes")(app);
 var fullPath = path.join(__dirname, '/app/public')
 app.use(express.static(fullPath));
 
-function handleRequest(req, res) {
-  var path = req.url;
+// function handleRequest(req, res) {
+//   var path = req.url;
 
-  switch (path) {
-  case "/tables":
-    return renderTablesPage(req, res);
-  case "/waitlist":
-    return renderWaitlistPage(req, res);
-  default:
-    return renderHomePage(req, res);
-  }
-}
+//   switch (path) {
+//   case "/tables":
+//     return renderTablesPage(req, res);
+//   case "/waitlist":
+//     return renderWaitlistPage(req, res);
+//   default:
+//     return renderHomePage(req, res);
+//   }
+// }
 
-function renderTablesPage(req, res) {
-  fs.readFile(__dirname + "/tables.html", function(err, data) {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/html" });
-      res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
-    }
-    else {
-      // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
-      // an html file.
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(data);
-    }
-  });
-}
+// function renderTablesPage(req, res) {
+//   fs.readFile(__dirname + "/tables.html", function(err, data) {
+//     if (err) {
+//       res.writeHead(500, { "Content-Type": "text/html" });
+//       res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
+//     }
+//     else {
+//       // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+//       // an html file.
+//       res.writeHead(200, { "Content-Type": "text/html" });
+//       res.end(data);
+//     }
+//   });
+// }
 
-function renderWaitlistPage(req, res) {
-  fs.readFile(__dirname + "/waitlist.html", function(err, data) {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/html" });
-      res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
-    }
-    else {
-      // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
-      // an html file.
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(data);
-    }
-  });
-}
+// function renderWaitlistPage(req, res) {
+//   fs.readFile(__dirname + "/waitlist.html", function(err, data) {
+//     if (err) {
+//       res.writeHead(500, { "Content-Type": "text/html" });
+//       res.end("<html><head><title>Oops</title></head><body><h1>Oops, there was an error</h1></html>");
+//     }
+//     else {
+//       // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+//       // an html file.
+//       res.writeHead(200, { "Content-Type": "text/html" });
+//       res.end(data);
+//     }
+//   });
+// }
 
 
 // Starts the server to begin listening

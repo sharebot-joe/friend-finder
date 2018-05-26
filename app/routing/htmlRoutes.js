@@ -22,6 +22,8 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     // var newpath = path.join(__dirname, "home.html");
     res.sendFile(path.join(__dirname, "../public/home.html"));
+    console.log('req.baseURL', req.baseURL)
+    // res.redirect(req.baseUrl);
   });
 
   
