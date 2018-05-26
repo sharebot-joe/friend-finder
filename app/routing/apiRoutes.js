@@ -14,10 +14,9 @@ module.exports = function(app) {
   
   // This route sends user to a page with friendsData displayed as json
   app.get("/api/friends", function(req, res) {
-    console.log("apifriends route hit")
-    console.log(friendsData)
-    console.log(JSON.stringify(friendsData))
-    res.json(friendsData)
+    // res.header("Content-Type",'application/json');
+    // res.json(friendsData)
+    res.send(JSON.stringify(friendsData, null, 2));
   });
 
   // This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.

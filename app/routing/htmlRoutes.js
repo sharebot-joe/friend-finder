@@ -19,12 +19,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
 
-  app.get("*", function(req, res) {
-    // var newpath = path.join(__dirname, "home.html");
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-    console.log('req.baseURL', req.baseURL)
-    // res.redirect(req.baseUrl);
+  app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/home.html'));
   });
+
+  app.get('*', function(req, res) {
+    res.redirect('/');
+  });
+  
 
   
 
