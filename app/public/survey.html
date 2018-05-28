@@ -7,11 +7,9 @@
       </title>
       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <!-- <link href="./style.css" rel="stylesheet" type="text/css"> -->
-      <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" rel="stylesheet">
-      
-    
-    <style>
-html body{
+        <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" rel="stylesheet">
+          <style>
+            html body{
   background: lightgray;
 }
 .jumbotron {
@@ -83,11 +81,21 @@ hr {
   font-weight: normal;
   font-family: palatino, verdana, serif;
 }
+#myModal, #modalTrigger {
+  display: none;
+}
 
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          </style>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+          </script>
+        </link>
+      </link>
+    </meta>
   </head>
   <body>
+
     <div class="container my-5">
       <div class="row text-center jumbotron questions">
         <div class="col-lg-12 mx-3">
@@ -98,7 +106,7 @@ hr {
             <table class="profiletable">
               <tr>
                 <h3>
-                   Enter your profile information (all fields required):
+                  Enter your profile information (all fields required):
                 </h3>
               </tr>
               <tr>
@@ -108,8 +116,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <input class="form-control" id="name" required="" type="text">
-       
+                  <input required class="form-control" id="name" type="text" >
                 </td>
               </tr>
               <tr>
@@ -119,21 +126,24 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <input class="form-control" id="photo" required="" type="text">
-       
+                  <input required class="form-control" id="photo" type="url" >
                 </td>
               </tr>
             </table>
             <div class="prompt">
-                  <p>For each of the following, please rate how strongly you identify with the statement.</p>
-                  <p>You can enter a number between 1 (strongly agree) and 5 (strongly disagree).</p>
+              <p>
+                For each of the following, please rate how strongly you identify with the statement.
+              </p>
+              <p>
+                You can enter a number between 1 (strongly agree) and 5 (strongly disagree).
+              </p>
             </div>
             <table class="questionstable">
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
-                      # 1 
+                      # 1
                     </strong>
                   </h3>
                 </td>
@@ -143,7 +153,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q1">
+                  <select required class="chosen-select" id="q1">
                     <option value="">
                     </option>
                     <option value="1">
@@ -164,7 +174,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -178,7 +188,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q2">
+                  <select required class="chosen-select" id="q2">
                     <option value="">
                     </option>
                     <option value="1">
@@ -199,7 +209,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -213,7 +223,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q3">
+                  <select required class="chosen-select" id="q3">
                     <option value="">
                     </option>
                     <option value="1">
@@ -234,7 +244,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -248,7 +258,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q4">
+                  <select required class="chosen-select" id="q4">
                     <option value="">
                     </option>
                     <option value="1">
@@ -269,7 +279,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -283,7 +293,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q5">
+                  <select required class="chosen-select" id="q5">
                     <option value="">
                     </option>
                     <option value="1">
@@ -304,7 +314,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -318,7 +328,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q6">
+                  <select required class="chosen-select" id="q6">
                     <option value="">
                     </option>
                     <option value="1">
@@ -339,7 +349,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -353,7 +363,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q7">
+                  <select required class="chosen-select" id="q7">
                     <option value="">
                     </option>
                     <option value="1">
@@ -374,7 +384,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -388,7 +398,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q8">
+                  <select required class="chosen-select" id="q8">
                     <option value="">
                     </option>
                     <option value="1">
@@ -409,7 +419,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -423,7 +433,7 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q9">
+                  <select required class="chosen-select" id="q9">
                     <option value="">
                     </option>
                     <option value="1">
@@ -444,7 +454,7 @@ hr {
                   </select>
                 </td>
               </tr>
-               <tr>
+              <tr>
                 <td>
                   <h3>
                     <strong>
@@ -458,8 +468,8 @@ hr {
                   </h4>
                 </td>
                 <td>
-                  <select class="chosen-select" id="q10">
-                     <option value="">
+                  <select required class="chosen-select" id="q10">
+                    <option value="">
                     </option>
                     <option value="1">
                       1 (Strongly Agree)
@@ -480,46 +490,127 @@ hr {
                 </td>
               </tr>
             </table>
-          <hr>
+            <hr>
+            </hr>
+          </hr>
         </div>
-        <div class="submit">
-          <button class="btn btn-primary" type="button">
+        <div>
+          <button class="btn btn-primary" type="button" id="submit">
             <i class="fas fa-list-alt">
             </i>
             Submit answers
           </button>
         </div>
       </div>
+    </div>
+    <div class="row text-center">
+      <div class="links col-lg-12 ">
+        <a href="/api/friends">
+          API Friends List
+        </a>
+        <span>
+          |
+        </span>
+        <a href="https://github.com/sharebot-joe/friend-finder">
+          Github Repo
+        </a>
+        <span>
+          |
+        </span>
+        <a href="/">
+          Home
+        </a>
       </div>
+    </div>
+    
+  <!-- Button to Open the Modal -->
+  <button type="button" id ="modalTrigger" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
       
-      <div class="row text-center">
-        <div class="links col-lg-12 ">
-          <a href="/api/friends">
-            API Friends List
-          </a>
-          <span>
-            |
-          </span>
-          <a href="https://github.com/sharebot-joe/friend-finder">
-            Github Repo
-          </a>
-          <span>
-            |
-          </span>
-          <a href="/">
-            Home
-          </a>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
       </div>
-
+    </div>
+  </div>
+  
     <!-- All javascripts go here-->
-
     <!-- Javascript for handling form submission. This function will make a POST call which add the submitted info to friends.js -->
-    <script type="text/javascript">
-      $(".submit button").on("click", function() {
-        console.log("clicked")
-       // var e = document.getElementById("ddlViewBy");
-       // var strUser = e.options[e.selectedIndex].text;
+    <script type="text/javascript"> 
+ $(document).ready(function(){
+
+      $("#submit").on("click", function() {
+       // Here we grab the form elements
+       $("#myModal").modal();
+        var newSurvey = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          q1: $("#q1").val().trim(),
+          q2: $("#q2").val().trim(),
+          q3: $("#q3").val().trim(),
+          q4: $("#q4").val().trim(),
+          q5: $("#q5").val().trim(),
+          q6: $("#q6").val().trim(),
+          q7: $("#q7").val().trim(),
+          q8: $("#q8").val().trim(),
+          q9: $("#q9").val().trim(),
+          q10: $("#q10").val().trim(),
+        };
+
+        // console.log(newSurvey);
+        // $(".resultPhoto").html(JSON.stringify(newSurvey))
+        // $('#modalTrigger').click();
+        // showResults();
+      });
+
+        // This line is the magic. It"s very similar to the standard ajax function we used.
+        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+        // depending on if a tables is available or not.
+
+        // $.post("/api/survey", newSurvey,
+        //   function(data) {
+
+        //     // If a table is available... tell user they are booked.
+        //     if (data) {
+        //       alert("Yay! You are officially booked!");
+        //     }
+
+        //     // If a table is available... tell user they on the waiting list.
+        //     else {
+        //       alert("Sorry you are on the wait list");
+        //     }
+
+        //     // Clear the form when submitting
+        //     $("#reserve-name").val("");
+        //     $("#reserve-phone").val("");
+        //     $("#reserve-email").val("");
+        //     $("#reserve-unique-id").val("");
+
+        //   });
+        //   showResults();
+
+        // });
+        
         // var searchedCharacter = $("#character-search").val().trim();
 
         // // Using a RegEx Pattern to remove spaces from searchedCharacter
@@ -540,8 +631,7 @@ hr {
         //     $("#stats").hide();
         //   }
         // });
-      });
+        });
     </script>
-
   </body>
 </html>
