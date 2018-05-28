@@ -45,7 +45,7 @@ hr {
   padding-top: 1rem;
   border-radius: 4px;
    border: 1px solid gray;
-   background: royalblue;
+   background: #2F7DF6;
 }
 .prompt p {
   color: #fff;
@@ -81,9 +81,12 @@ hr {
   font-weight: normal;
   font-family: palatino, verdana, serif;
 }
-#myModal, #modalTrigger {
+#myModal {
   display: none;
 }
+/*#modalTrigger {
+  display: none;
+}*/
 
           </style>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -99,429 +102,399 @@ hr {
     <div class="container my-5">
       <div class="row text-center jumbotron questions">
         <div class="col-lg-12 mx-3">
-          <h1>
-            Survey Questionnaire
-          </h1>
-          <hr style="margin: 2rem 0">
-            <table class="profiletable">
-              <tr>
-                <h3>
-                  Enter your profile information (all fields required):
-                </h3>
-              </tr>
-              <tr>
-                <td>
-                  <h4>
-                    Name
-                  </h4>
-                </td>
-                <td>
-                  <input required class="form-control" id="name" type="text" >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4>
-                    Link to photo
-                  </h4>
-                </td>
-                <td>
-                  <input required class="form-control" id="photo" type="url" >
-                </td>
-              </tr>
-            </table>
-            <div class="prompt">
-              <p>
-                For each of the following, please rate how strongly you identify with the statement.
-              </p>
-              <p>
-                You can enter a number between 1 (strongly agree) and 5 (strongly disagree).
-              </p>
-            </div>
-            <table class="questionstable">
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 1
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I can work even when things are disorganized.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q1">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 2
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I consistently put full time and effort into everything I do.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q2">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 3
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I do my best work when I am hungry.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q3">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 4
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I prefer achieving my goals than assisting others to achieve their goals.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q4">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 5
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I would describe myself as an extremely competent person.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q5">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 6
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I prefer working within a stable rather than flexible environment.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q6">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 7
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I am ambitious.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q7">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 8
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I am able to complete tasks as well as, or better than other people
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q8">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 9
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I like to be in charge of other people.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q9">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h3>
-                    <strong>
-                      # 10
-                    </strong>
-                  </h3>
-                </td>
-                <td>
-                  <h4>
-                    I feel uneasy if I'm the centre of attention.
-                  </h4>
-                </td>
-                <td>
-                  <select required class="chosen-select" id="q10">
-                    <option value="">
-                    </option>
-                    <option value="1">
-                      1 (Strongly Agree)
-                    </option>
-                    <option value="2">
-                      2
-                    </option>
-                    <option value="3">
-                      3
-                    </option>
-                    <option value="4">
-                      4
-                    </option>
-                    <option value="5">
-                      5 (Strongly Disagree)
-                    </option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <hr>
-            </hr>
-          </hr>
-        </div>
-        <div>
-          <button class="btn btn-primary" type="button" id="submit">
-            <i class="fas fa-list-alt">
-            </i>
-            Submit answers
-          </button>
+          <div class="row">
+          	<div class="col-lg-12 mx-3">
+          		<h1>
+          		  Survey Questionnaire
+          		</h1>
+          		<hr style="margin: 2rem 0">
+          		<h3>
+          		  Enter your profile information (all fields required):
+          		</h3>
+          	</div>
+          </div>
+      		<form id="surveyForm">
+      			<div class="row">
+      				<div class="col-lg-12 mx-3">
+      						<div class="row">
+	      						<label for="name">Enter Name:</label>
+	      					  <input  
+	      					  class="form-control" id="name" type="text" required>
+	      					</div>
+      						<div class="row">
+	      						<label for="name">Link to Photo:</label>
+	      					  <input  class="form-control" id="photo" type="url" required>
+	      					</div>	      					
+                  <div class="prompt">
+                    <p>
+                      For each of the following, please rate how strongly you identify with the statement.
+                    </p>
+                    <p>
+                      You can enter a number between 1 (strongly agree) and 5 (strongly disagree).
+                    </p>
+                  </div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 1
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I can work even when things are disorganized.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q1">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 2
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I consistently put full time and effort into everything I do.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q2">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 3
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I do my best work when I am hungry.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q3">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 4
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I prefer achieving my goals than assisting others to achieve their goals.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q4">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 5
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I would describe myself as an extremely competent person.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q5">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 6
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I prefer working within a stable rather than flexible environment.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q6">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 7
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I am ambitious.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q7">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 8
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I am able to complete tasks as well as, or better than other people.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q8">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 9
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I like to be in charge of other people.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q9">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>
+	      					<div class="row">
+	      						<div class="col-lg-1 mx-1">
+	      							<strong>
+	      							  # 10
+	      							</strong>
+	      						</div>
+	      						<div class="col-lg-8 mx-1">
+	      							<h4>
+	      							  I feel uneasy if I'm the centre of attention.
+	      							</h4>
+	      						</div>
+	      						<div class="col-lg-3 mx-1">
+	      							<select required class="chosen-select" id="q10">
+	      							  <option value="">
+	      							  </option>
+	      							  <option value="1">
+	      							    1 (Strongly Agree)
+	      							  </option>
+	      							  <option value="2">
+	      							    2
+	      							  </option>
+	      							  <option value="3">
+	      							    3
+	      							  </option>
+	      							  <option value="4">
+	      							    4
+	      							  </option>
+	      							  <option value="5">
+	      							    5 (Strongly Disagree)
+	      							  </option>
+	      							</select>
+	      						</div>
+	      					</div>	      					
+      				</div>
+      			</div>
+      			<div class="row">
+	      			<button class="btn btn-primary" type="submit" id="submit">
+	      			  <i class="fas fa-list-alt">
+	      			  </i>
+	      			  Submit answers
+	      			</button>
+	      		</div>
+      		</form>  
+          <hr>
         </div>
       </div>
-    </div>
-    <div class="row text-center">
-      <div class="links col-lg-12 ">
-        <a href="/api/friends">
-          API Friends List
-        </a>
-        <span>
-          |
-        </span>
-        <a href="https://github.com/sharebot-joe/friend-finder">
-          Github Repo
-        </a>
-        <span>
-          |
-        </span>
-        <a href="/">
-          Home
-        </a>
-      </div>
-    </div>
+	    <div class="row text-center">
+	      <div class="links col-lg-12 ">
+	        <a href="/api/friends">
+	          API Friends List
+	        </a>
+	        <span>
+	          |
+	        </span>
+	        <a href="https://github.com/sharebot-joe/friend-finder">
+	          Github Repo
+	        </a>
+	        <span>
+	          |
+	        </span>
+	        <a href="/">
+	          Home
+	        </a>
+	      </div>
+	    </div>
     
   <!-- Button to Open the Modal -->
   <button type="button" id ="modalTrigger" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
